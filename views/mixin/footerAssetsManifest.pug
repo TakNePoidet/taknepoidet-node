@@ -1,0 +1,4 @@
+mixin footerAssetsManifest(scripts)
+	each script in scripts
+		each link in assetsManifest[script].js
+			script(src='/assets' + link)

@@ -1,0 +1,18 @@
+$gutter: 30px;
+$grid-breakpoints: (
+	xl: 1300px,
+);
+$container-max-widths: (
+	xl: 1270px,
+);
+$secondary-text-color: rgba(#000000, 0.4);
+$primary-text-color: rgba(#000000, 0.8);
+$text-color-gray: rgba(#000000, 0.6);
+
+$brand-color: #5fc02e;
+:root {
+	--secondary-text-color: #{$secondary-text-color};
+	--primary-text-color: #{$primary-text-color};
+	--text-color-gray: #{$text-color-gray};
+	--brand-color: #{$brand-color};
+}

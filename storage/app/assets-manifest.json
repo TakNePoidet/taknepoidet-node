@@ -1,0 +1,10 @@
+{
+  "index": {
+    "css": [],
+    "js": [
+      "/js/runtime~index.js",
+      "/js/vendor.js",
+      "/js/index.js"
+    ]
+  }
+}
