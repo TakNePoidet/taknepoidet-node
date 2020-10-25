@@ -1,13 +1,13 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+		"target": "esnext",
 		"locale": "ru",
 		"sourceMap": true,
 		"moduleResolution": "node",
-		"module": "ESNext",
+		"module": "esnext",
 		"strict": true,
 		"newLine": "lf",
-		"jsx": "react",
+		"jsx": "preserve",
 		"importHelpers": true,
 		"lib": ["dom", "es5", "es2015.promise", "ESNext"],
 		"rootDir": "./",
@@ -17,8 +17,9 @@
 			"~libs/*": ["libs/*"],
 			"~type/*": ["type/*"],
 			"~interface/*": ["interface/*"],
-			"~style/*": ["../style/*"]
+			"@style/*": ["./style/*"]
 		}
 	},
-	"include": ["./**/*"]
+	"include": ["**/*.ts"],
+	"exclude": ["**/*.test.ts"]
 }

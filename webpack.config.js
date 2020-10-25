@@ -11,13 +11,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const dotenv = require('dotenv');
 const findUp = require('find-up');
-
+const ESLintPlugin = require('eslint-webpack-plugin');
 dotenv.config({ path: findUp.sync('.env') });
 const IS_DEV = process.env.NODE_ENV !== 'production';
 if (!IS_DEV) {
 	const { parsed: envConfig } = dotenv.config({
-		path: findUp.sync('.env.prod'),
+		path: findUp.sync('.env.prod')
 	});
+	// eslint-disable-next-line guard-for-in
 	for (const k in envConfig) {
 		process.env[k] = envConfig[k];
 	}
@@ -29,21 +30,21 @@ const WEBPACK_PORT = 8085;
 const baseWebpackConfig = {
 	output: {
 		publicPath: '/assets/',
-		path: path.join(__dirname, './dist', 'frontend'),
+		path: path.join(__dirname, './dist', 'frontend')
 	},
 	entry: {
-		index: './src/frontend/js/index.ts',
+		index: './src/frontend/js/index.ts'
 	},
 	module: {
 		rules: [
 			{
 				test: /\.vue$/,
-				loader: 'vue-loader',
+				loader: 'vue-loader'
 			},
 			{
 				test: /\.(ts|js)x?$/,
 				exclude: /node_modules/,
-				use: 'babel-loader',
+				use: 'babel-loader'
 			},
 			{
 				test: /\.css$/,
@@ -53,12 +54,12 @@ const baseWebpackConfig = {
 						: {
 								loader: MiniCssExtractPlugin.loader,
 								options: {
-									hmr: IS_DEV,
-								},
+									hmr: IS_DEV
+								}
 						  },
 					'css-loader',
-					'postcss-loader',
-				],
+					'postcss-loader'
+				]
 			},
 			{
 				test: /\.scss$/,
@@ -68,13 +69,13 @@ const baseWebpackConfig = {
 						: {
 								loader: MiniCssExtractPlugin.loader,
 								options: {
-									hmr: IS_DEV,
-								},
+									hmr: IS_DEV
+								}
 						  },
 					'css-loader',
 					'postcss-loader',
-					'sass-loader',
-				],
+					'sass-loader'
+				]
 			},
 			{
 				test: /\.(png|jpg|svg|gif)$/,
@@ -83,21 +84,25 @@ const baseWebpackConfig = {
 					name: '[contenthash].[ext]',
 					outputPath: 'images',
 					esModule: false,
-					useRelativePath: true,
-				},
+					useRelativePath: true
+				}
 			},
 			{
-				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				loader: 'file-loader',
 				options: {
 					name: '[contenthash].[ext]',
 					outputPath: 'font',
-					esModule: false,
-				},
-			},
-		],
+					esModule: false
+				}
+			}
+		]
 	},
 	plugins: [
+		new ESLintPlugin({
+			context: './src/frontend',
+			extensions: ['.js', '.ts', '.vue']
+		}),
 		new VueLoaderPlugin(),
 		new WebpackBar(),
 		new WebpackAssetsManifest({
@@ -109,6 +114,7 @@ const baseWebpackConfig = {
 			// },
 			transform(_, manifest) {
 				const entrypoints = {};
+				// eslint-disable-next-line no-restricted-syntax
 				for (const key in manifest.stats.namedChunkGroups) {
 					if (manifest.stats.namedChunkGroups.hasOwnProperty(key)) {
 						const element = manifest.stats.namedChunkGroups[key];
@@ -120,13 +126,13 @@ const baseWebpackConfig = {
 							.map((value) => `/${value}`);
 						entrypoints[key] = {
 							css,
-							js,
+							js
 						};
 					}
 				}
 				return entrypoints;
-			},
-		}),
+			}
+		})
 		// new WebpackAssetsManifest({
 		// 	writeToDisk: true,
 		// 	output: path.join(__dirname, '../dist/frontend/assets-manifest.json'),
@@ -140,8 +146,12 @@ const baseWebpackConfig = {
 			'~libs': path.resolve(__dirname, './src/frontend/js/libs'),
 			'~type': path.resolve(__dirname, './src/frontend/js/type'),
 			'~interface': path.resolve(__dirname, './src/frontend/js/interface'),
-			'~style': path.resolve(__dirname, './src/frontend/style'),
-		},
+			'@style': path.resolve(__dirname, './src/frontend/style'),
+			'@images': path.resolve(__dirname, './src/frontend/images'),
+			'@components': path.resolve(__dirname, './src/frontend/js/components'),
+			'@pages': path.resolve(__dirname, './src/frontend/js/pages'),
+			'@layout': path.resolve(__dirname, './src/frontend/js/layout')
+		}
 	},
 	optimization: {
 		runtimeChunk: true,
@@ -150,18 +160,18 @@ const baseWebpackConfig = {
 				vendors: {
 					test: /[\\/]node_modules[\\/]/,
 					name: 'vendor',
-					chunks: 'initial',
-				},
-			},
-		},
-	},
+					chunks: 'initial'
+				}
+			}
+		}
+	}
 };
 
 let webpackConfig;
 if (!IS_DEV) {
 	webpackConfig = webpackMerge(baseWebpackConfig, {
 		output: {
-			filename: 'js/[name]-[contenthash].js',
+			filename: 'js/[name]-[contenthash].js'
 		},
 		mode: 'production',
 		watch: false,
@@ -171,8 +181,8 @@ if (!IS_DEV) {
 			// @ts-ignore
 			new MiniCssExtractPlugin({
 				filename: 'style/[name]-[contenthash].css',
-				chunkFilename: 'style/[name]-[contenthash].css',
-			}),
+				chunkFilename: 'style/[name]-[contenthash].css'
+			})
 		],
 		optimization: {
 			minimize: true,
@@ -187,23 +197,23 @@ if (!IS_DEV) {
 							inline: true,
 							passes: 5,
 							keep_fargs: false,
-							ecma: 5,
+							ecma: 5
 						},
 						output: {
 							beautify: false,
-							comments: false,
+							comments: false
 						},
-						mangle: true,
-					},
-				}),
-			],
-		},
+						mangle: true
+					}
+				})
+			]
+		}
 	});
 } else {
 	webpackConfig = webpackMerge(baseWebpackConfig, {
 		plugins: [new webpack.HotModuleReplacementPlugin()],
 		output: {
-			filename: 'js/[name].js',
+			filename: 'js/[name].js'
 		},
 		mode: 'development',
 		watch: true,
@@ -214,8 +224,8 @@ if (!IS_DEV) {
 			overlay: IS_DEV,
 			open: false,
 			openPage: `http://localhost:${APP_SERVER_PORT}`,
-			contentBase: path.join(__dirname, './dist', 'frontend'),
-		},
+			contentBase: path.join(__dirname, './dist', 'frontend')
+		}
 	});
 }
 

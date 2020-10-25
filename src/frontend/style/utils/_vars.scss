@@ -1,18 +1,38 @@
-$gutter: 30px;
-$grid-breakpoints: (
-	xl: 1300px,
-);
-$container-max-widths: (
-	xl: 1270px,
-);
-$secondary-text-color: rgba(#000000, 0.4);
-$primary-text-color: rgba(#000000, 0.8);
-$text-color-gray: rgba(#000000, 0.6);
+// $gutter: 30px;
+// $grid-breakpoints: (
+// 	xl: 1300px,
+// );
+// $container-max-widths: (
+// 	xl: 1270px,
+// );
+// $secondary-text-color: rgba(#000000, 0.4);
+// $primary-text-color: rgba(#000000, 0.8);
+// $text-color-gray: rgba(#000000, 0.6);
 
-$brand-color: #5fc02e;
+// $brand-color: #5fc02e;
 :root {
-	--secondary-text-color: #{$secondary-text-color};
-	--primary-text-color: #{$primary-text-color};
-	--text-color-gray: #{$text-color-gray};
-	--brand-color: #{$brand-color};
+	// color
+	--brand-color: #2d6dba;
+	--brand-color-invert: #ffffff;
+
+	--brand-color-3: #{lighten($color: #2d6dba, $amount: 10)};
+	--brand-color-4: #{lighten($color: #2d6dba, $amount: 20)};
+	--brand-color-5: #{lighten($color: #2d6dba, $amount: 30)};
+
+	--color-gray-3: #808080;
+
+	--main-color-text: #222222;
+
+	--body-bg: #ffffff;
+
+	--header-bar: #444444;
+	--header-bar-hover: #000000;
+	// grid
+	--gutter: 16px;
+	--container: 1660px;
+}
+
+body.app-night-theme {
+	--body-bg: #222222;
+	--main-color-text: #{rgba($color: #ffffff, $alpha: 0.8)};
 }

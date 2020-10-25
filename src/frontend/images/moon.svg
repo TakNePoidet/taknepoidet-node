@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 610">
+  <defs/>
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Прямоугольник_6" fill="#fff" stroke="#707070" d="M0 0h590v610H0z" data-name="Прямоугольник 6" transform="translate(2335 -503)"/>
+    </clipPath>
+  </defs>
+  <g id="moon" clip-path="url(#clip-path)" transform="translate(-2335 503)">
+    <g id="moon-2" data-name="moon" transform="translate(-120 -363)">
+      <ellipse id="Эллипс_12" cx="280" cy="280.511" data-name="Эллипс 12" rx="280" ry="280.511" transform="rotate(-73 1437.33426588 -1446.16827959)"/>
+      <circle id="Эллипс_11" cx="256" cy="256" r="256" data-name="Эллипс 11" transform="rotate(-73 1441.51045989 -1474.7238282)"/>
+      <circle id="Эллипс_1" cx="256" cy="256" r="256" fill="#676666" data-name="Эллипс 1" transform="rotate(-73 1441.51045989 -1474.7238282)"/>
+      <circle id="Эллипс_2" cx="48" cy="48" r="48" class="cls-4" data-name="Эллипс 2" transform="rotate(-73 1427.29892589 -1587.96752265)"/>
+      <circle id="Эллипс_3" cx="35.648" cy="35.648" r="35.648" class="cls-4" data-name="Эллипс 3" transform="rotate(-73 1342.41206457 -1761.63114184)"/>
+      <circle id="Эллипс_4" cx="31.376" cy="31.376" r="31.376" class="cls-4" data-name="Эллипс 4" transform="rotate(-73 1483.96355117 -1734.78422196)"/>
+      <circle id="Эллипс_5" cx="13.184" cy="13.184" r="13.184" class="cls-4" data-name="Эллипс 5" transform="rotate(-73 1530.82336337 -1825.4579015)"/>
+      <circle id="Эллипс_6" cx="13.184" cy="13.184" r="13.184" class="cls-4" data-name="Эллипс 6" transform="rotate(-73 1546.15083104 -1662.09350448)"/>
+      <path id="Контур_26" fill="#f3c432" d="M392.384 39.616A254.49 254.49 0 01432 176c0 141.376-114.608 256-256 256a254.49 254.49 0 01-136.384-39.616C84.96 464.176 164.816 512 256 512c141.392 0 256-114.624 256-256 0-91.184-47.824-171.04-119.616-216.384z" data-name="Контур 26" transform="rotate(-73 1441.51045989 -1474.7238282)"/>
+      <circle id="Эллипс_7" cx="17.664" cy="17.664" r="17.664" class="cls-6" data-name="Эллипс 7" transform="rotate(-73 1617.99989126 -1862.64314182)"/>
+      <circle id="Эллипс_8" cx="26.144" cy="26.144" r="26.144" class="cls-4" data-name="Эллипс 8" transform="rotate(-73 1592.41859234 -1723.90290423)"/>
+      <circle id="Эллипс_9" cx="26.144" cy="26.144" r="26.144" class="cls-6" data-name="Эллипс 9" transform="rotate(-73 1452.18500021 -1894.80894304)"/>
+    </g>
+  </g>
+</svg>

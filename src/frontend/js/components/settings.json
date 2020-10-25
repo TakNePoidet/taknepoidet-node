@@ -1,0 +1,115 @@
+{
+	"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+	"workbench.iconTheme": "vscode-icons",
+	"sync.quietSync": true,
+	"sync.autoDownload": true,
+	"sync.autoUpload": true,
+	"prettier.trailingComma": "es5",
+	"editor.renderWhitespace": "selection",
+	"editor.formatOnSave": true,
+	"vetur.validation.template": true,
+	"editor.tabSize": 2,
+	"prettier.useTabs": true,
+	"editor.insertSpaces": false,
+	"javascript.format.semicolons": "insert",
+	"typescript.format.semicolons": "insert",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"javascript.format.insertSpaceAfterConstructor": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+	"editor.multiCursorModifier": "ctrlCmd",
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"scssFormatter.singleQuote": true,
+	"git.ignoreMissingGitWarning": true,
+	"editor.fontLigatures": true,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+	"sync.gist": "dd62c812a1c78a71b86edf5793bc1db3",
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	},
+	"window.zoomLevel": 0,
+	"eslint.validate": [
+		{
+			"language": "vue",
+			"autoFix": true
+		},
+		{
+			"language": "javascript",
+			"autoFix": true
+		},
+		{
+			"language": "javascriptreact",
+			"autoFix": true
+		},
+		{
+			"language": "typescript",
+			"autoFix": true
+		}
+	],
+	"eslint.nodePath": "C:\\Users\\yakin\\AppData\\Local\\Packages\\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\\LocalState\\rootfs\\usr\\lib\node_modules",
+	"eslint.autoFixOnSave": true,
+	"javascript.preferences.quoteStyle": "single",
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"emmet.triggerExpansionOnTab": true,
+	"editor.renameOnType": true,
+	"prettier.withNodeModules": true,
+	"javascript.implicitProjectConfig.checkJs": true,
+	"files.exclude": {
+		"node_modules/": true
+	},
+	"typescript.locale": "ru",
+	"git.ignoreLimitWarning": true,
+	"typescript.preferences.quoteStyle": "single",
+	"prettier.jsxSingleQuote": true,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"vetur.format.options.useTabs": true,
+	"vetur.format.scriptInitialIndent": true,
+	"eslint.experimental.incrementalSync": true,
+	"eslint.alwaysShowStatus": true,
+	"editor.useTabStops": false,
+	"[vue]": {
+		"editor.defaultFormatter": "octref.vetur"
+	},
+	"prettier.singleQuote": true,
+	"autoimport.doubleQuotes": true,
+	"vetur.format.defaultFormatter.js": "prettier-eslint",
+	"vetur.format.defaultFormatter.ts": "prettier-tslint",
+	"vetur.validation.templateProps": true,
+	"eslint.packageManager": "yarn",
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[handlebars]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"files.associations": {
+		"*.pug": "jade"
+	},
+	"pugbeautify.omitDiv": true,
+	"pugbeautify.tabSize": 2,
+	"pugbeautify.fillTab": false,
+	"prettier.bracketSpacing": false,
+	"workbench.startupEditor": "welcomePage",
+	"editor.renderControlCharacters": true,
+	"explorer.confirmDelete": false,
+	"[scss]": {
+		"editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+	},
+	"[sql]": {
+		"editor.defaultFormatter": "remimarsal.prettier-now"
+	}
+}

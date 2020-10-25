@@ -1,3 +1,124 @@
 @import './utils/reset';
 @import './utils/mixins';
 @import './utils/vars';
+
+body {
+	background-color: var(--body-bg);
+	transition: all 0.2s cubic-bezier(0.62, -0.26, 0.74, 0.05);
+	padding-top: 80px;
+	font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: var(--container);
+	position: relative;
+	padding: 0px calc(var(--gutter));
+}
+
+.header {
+	width: 100%;
+	position: fixed;
+	display: block;
+	height: 80px;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background-color: var(--body-bg);
+	.header-container {
+		@extend .container;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.header-bar {
+		$bar: '.header-bar';
+		margin-right: 15px;
+		height: 40px;
+		& > button {
+			appearance: none;
+			width: 40px;
+			height: 40px;
+			background-color: transparent;
+			border: none;
+			box-shadow: none;
+			padding: 0;
+			margin: 0;
+			position: relative;
+			cursor: pointer;
+			border-radius: 20px;
+			span {
+				height: 2px;
+				width: 25px;
+				background-color: var(--header-bar);
+				display: block;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				position: absolute;
+				pointer-events: none;
+				transition: background-color 200ms ease;
+				&::after,
+				&::before {
+					content: '';
+					position: absolute;
+					height: 2px;
+					width: 15px;
+					display: block;
+					left: 0;
+					width: 20px;
+					transition: all 200ms ease;
+					background-color: var(--header-bar);
+				}
+				&::before {
+					top: -6px;
+				}
+				&::after {
+					top: 6px;
+				}
+			}
+			&:hover {
+				span {
+					background-color: var(--brand-color);
+					&::after,
+					&::before {
+						background-color: var(--brand-color);
+					}
+				}
+			}
+		}
+		&#{$bar}--open {
+			& > button {
+				span {
+					background-color: transparent;
+					&::after,
+					&::before {
+						width: 25px;
+						top: 0;
+					}
+					&::before {
+						transform: rotate(45deg);
+					}
+					&::after {
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+	}
+	.header-logo {
+		color: var(--brand-color);
+		svg {
+			height: 40px;
+		}
+	}
+}
+
+.toggle-theme {
+	display: block;
+	cursor: pointer;
+	img {
+		width: 40px;
+	}
+}
