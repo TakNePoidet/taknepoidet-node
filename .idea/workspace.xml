@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5a7528d5-d784-43c7-8894-50a172480ca2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/taknepoidet-vue-3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/components/Header/HeaderToogleTheme.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/components/Header/HeaderToggleTheme.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/components/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/components/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/layout/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/layout/MainLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/libs/TxtRotate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/libs/TxtRotate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/store/modules/App.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/store/modules/App.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/js/types/svg.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/js/types/svg.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/style/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/style/utils/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/style/utils/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/style/utils/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/style/utils/_vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/libs/assetsManifest.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/libs/assetsManifest.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/assets-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/assets-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/assets-manifest.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/assets-manifest.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1jbz9NCsUQ6qTO6rWiRc74IkeKu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="node" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="D:\PG\taknepoidet-vue-3\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Sass" />
+    <property name="ts.external.directory.path" value="D:\PG\taknepoidet-vue-3\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Home.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/taknepoidet-vue-3/src/frontend/js/pages/Home.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Home.vue" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5a7528d5-d784-43c7-8894-50a172480ca2" name="Default Changelist" comment="" />
+      <created>1604087429788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604087429788</updated>
+      <workItem from="1604087432917" duration="756000" />
+      <workItem from="1604088245449" duration="682000" />
+      <workItem from="1604687851648" duration="1546000" />
+      <workItem from="1604690462425" duration="963000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="482" y="279" width="907" height="525" key="#ESLint" timestamp="1604690958954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="482" y="279" width="907" height="525" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1604690958954" />
+    <state x="678" y="188" key="#TypeScript" timestamp="1604688427955">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="678" y="188" key="#TypeScript/0.0.1920.1040@0.0.1920.1040" timestamp="1604688427955" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604088532730">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604088532730" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1604087927201">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604087927201" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1604690701052">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604690701052" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604689153009">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604689153009" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/@vue/runtime-core/dist/runtime-core.d.ts</url>
+          <line>310</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

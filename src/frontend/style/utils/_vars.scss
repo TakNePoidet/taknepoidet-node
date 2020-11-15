@@ -1,38 +1,187 @@
-// $gutter: 30px;
-// $grid-breakpoints: (
-// 	xl: 1300px,
-// );
+$grid-breakpoints: (
+	xs: (
+		size: 470px,
+		gutter: 16px
+	),
+	sm: (
+		size: 576px,
+		gutter: 16px
+	),
+	md: (
+		size: 640px,
+		gutter: 16px
+	),
+	lg: (
+		size: 960px,
+		gutter: 16px
+	),
+	xl: (
+		size: 1300px,
+		gutter: 20px
+	),
+	xxl: (
+		size: 1690px,
+		gutter: 20px
+	)
+);
+
 // $container-max-widths: (
-// 	xl: 1270px,
+// 	xs: 540px,
+// 	sm: 540px,
+// 	md: 620px,
+// 	lg: 940px,
+// 	xl: 1580px
 // );
-// $secondary-text-color: rgba(#000000, 0.4);
-// $primary-text-color: rgba(#000000, 0.8);
-// $text-color-gray: rgba(#000000, 0.6);
 
-// $brand-color: #5fc02e;
+$colors: (
+	brand: (
+		base: #2d6dba,
+		inversed: #ffffff,
+		hover: darken(#2d6dba, 5),
+		rgb: toRGB(#2d6dba),
+		secondary: (
+			base: #71a2db,
+			hover: darken(#71a2db, 5),
+			inversed: #ffffff
+		)
+	),
+	text: (
+		main: (
+			base: #222222
+		),
+		secondary: (
+			base: #7f7f7f
+		)
+	),
+	header: (
+		bar: (
+			base: #686868
+		)
+	),
+	body: (
+		base: #fff,
+		rgb: toRGB(#fff)
+	),
+	ligth-gray: (
+		200: (
+			base: darken(#ffffff, 5)
+		)
+	),
+	overlay: (
+		(
+			80:
+				rgba(
+					$color: #fff,
+					$alpha: 0.8
+				),
+			70:
+				rgba(
+					$color: #fff,
+					$alpha: 0.7
+				),
+			60:
+				rgba(
+					$color: #fff,
+					$alpha: 0.6
+				)
+		)
+	)
+	// header: (
+// 	bar: (
+// 		base: getColorPalette(gray, 900),
+// 		hover: getColorPalette(gray, 600)
+// 	)
+// ),
+// text: (
+// 	main: (
+// 		base: getColorPalette('dark', 900)
+// 	),
+// 	secondary: (
+// 		base: getColorPalette('light', 800)
+// 	)
+// )
+);
+
 :root {
-	// color
-	--brand-color: #2d6dba;
-	--brand-color-invert: #ffffff;
+	// @each $key, $tones in $color-palette {
+	// 	@if is-map($tones) {
+	// 		@each $key-tone, $value in $tones {
+	// 			#{$uiKitPalettePreffix}-#{''+$key}-#{$key-tone}: #{$value};
+	// 		}
+	// 	} @else {
+	// 		#{$uiKitPalettePreffix}-#{''+$key}: #{'' + $tones};
+	// 	}
+	// }
+	@include inserRootVariablesDeep(
+		(
+			color: $colors,
+			gutter: 16px,
+			container: 100%,
+			grid-breakpoint: $grid-breakpoints
+		)
+	);
 
-	--brand-color-3: #{lighten($color: #2d6dba, $amount: 10)};
-	--brand-color-4: #{lighten($color: #2d6dba, $amount: 20)};
-	--brand-color-5: #{lighten($color: #2d6dba, $amount: 30)};
-
-	--color-gray-3: #808080;
-
-	--main-color-text: #222222;
-
-	--body-bg: #ffffff;
-
-	--header-bar: #444444;
-	--header-bar-hover: #000000;
+	@each $breakpoint, $breakpoint-key in $grid-breakpoints {
+		@media screen and (min-width: get-breakpoint-size($breakpoint)) {
+			--gutter: #{get-breakpoint-gutter($breakpoint)};
+			--container: calc(
+				#{get-breakpoint-size($breakpoint)} - var(--gutter) * 2
+			);
+		}
+	}
+}
+:root {
 	// grid
-	--gutter: 16px;
-	--container: 1660px;
+	// --gutter: 8px;
+	// --container: 1660px;
+	// --grid-breakpoint-xxs: 375px;
 }
 
 body.app-night-theme {
-	--body-bg: #222222;
-	--main-color-text: #{rgba($color: #ffffff, $alpha: 0.8)};
+	$colorsNight: (
+		text: (
+			main: (
+				base:
+					rgba(
+						$color: #fff,
+						$alpha: 0.9
+					)
+			),
+			secondary: (
+				base:
+					rgba(
+						$color: #fff,
+						$alpha: 0.5
+					)
+			)
+		),
+		body: (
+			base: #111
+		),
+		overlay: (
+			(
+				80:
+					rgba(
+						$color: #000000,
+						$alpha: 0.8
+					),
+				70:
+					rgba(
+						$color: #000000,
+						$alpha: 0.7
+					)
+			)
+		)
+	);
+	@include inserRootVariablesDeep(
+		(
+			color: $colorsNight
+		)
+	);
 }
+
+// @media screen and (min-width: get-breakpoint-size('xxs')) {
+// 	:root {
+// 		--gutter: 16px;
+// 	}
+// }

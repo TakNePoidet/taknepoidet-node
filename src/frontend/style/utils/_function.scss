@@ -1,0 +1,22 @@
+@function map-set($map, $key, $value) {
+	$new: (
+		$key: $value
+	);
+	@return map-merge($map, $new);
+}
+@function is-map($var) {
+	@return type-of($var) == 'map';
+}
+@function get-breakpoint-size($size) {
+	$breakpoin: map-get($grid-breakpoints, $size);
+	@return map-get($breakpoin, 'size');
+}
+
+@function get-breakpoint-gutter($size) {
+	$breakpoin: map-get($grid-breakpoints, $size);
+	@return map-get($breakpoin, 'gutter');
+}
+
+@function toRGB($color) {
+	@return red($color) + ' ' + green($color) + ' ' + blue($color);
+}

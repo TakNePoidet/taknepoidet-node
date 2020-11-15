@@ -3,12 +3,12 @@ include ../mixin/footerAssetsManifest
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		title=title
 		each style in ['index']
 			each link in assetsManifest[style].css
 				link(rel="stylesheet", href='/assets' + link)
-	body
+	body(class="grid-helper")
 		block content
 		footer
 		+footerAssetsManifest(['index'])

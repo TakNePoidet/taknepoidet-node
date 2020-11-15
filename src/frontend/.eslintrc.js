@@ -8,7 +8,9 @@ module.exports = {
 				scss: '',
 				ts: 'never'
 			}
-		]
+		],
+		'no-underscore-dangle': 'off',
+		'class-methods-use-this': 'off'
 	},
 	settings: {
 		'import/resolver': {
@@ -66,12 +68,14 @@ module.exports = {
 				'vue/max-attributes-per-line': [
 					'error',
 					{
-						singleline: 2,
+						singleline: 3,
 						multiline: {
+							max: 1,
 							allowFirstLine: false
 						}
 					}
 				],
+
 				'vue/component-name-in-template-casing': 'off'
 			}
 		}

@@ -11,8 +11,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const dotenv = require('dotenv');
 const findUp = require('find-up');
+const DotenvWebpack = require('dotenv-webpack');
+
 const ESLintPlugin = require('eslint-webpack-plugin');
 dotenv.config({ path: findUp.sync('.env') });
+
 const IS_DEV = process.env.NODE_ENV !== 'production';
 if (!IS_DEV) {
 	const { parsed: envConfig } = dotenv.config({
@@ -57,8 +60,8 @@ const baseWebpackConfig = {
 									hmr: IS_DEV
 								}
 						  },
-					'css-loader',
-					'postcss-loader'
+					'css-loader'
+					// 'postcss-loader'
 				]
 			},
 			{
@@ -132,7 +135,8 @@ const baseWebpackConfig = {
 				}
 				return entrypoints;
 			}
-		})
+		}),
+		new DotenvWebpack()
 		// new WebpackAssetsManifest({
 		// 	writeToDisk: true,
 		// 	output: path.join(__dirname, '../dist/frontend/assets-manifest.json'),
@@ -141,12 +145,13 @@ const baseWebpackConfig = {
 	resolve: {
 		extensions: ['.js', '.ts', '.vue', '.jsx', '.tsx', '.scss', '.sass'],
 		alias: {
-			'~': path.resolve(__dirname, './src/frontend'),
-			'~js': path.resolve(__dirname, './src/frontend/js'),
-			'~libs': path.resolve(__dirname, './src/frontend/js/libs'),
-			'~type': path.resolve(__dirname, './src/frontend/js/type'),
-			'~interface': path.resolve(__dirname, './src/frontend/js/interface'),
+			'@': path.resolve(__dirname, './src/frontend'),
+			'@js': path.resolve(__dirname, './src/frontend/js'),
+			'@libs': path.resolve(__dirname, './src/frontend/js/libs'),
+			'@type': path.resolve(__dirname, './src/frontend/js/type'),
+			'@interface': path.resolve(__dirname, './src/frontend/js/interface'),
 			'@style': path.resolve(__dirname, './src/frontend/style'),
+			'@fonts': path.resolve(__dirname, './src/frontend/fonts'),
 			'@images': path.resolve(__dirname, './src/frontend/images'),
 			'@components': path.resolve(__dirname, './src/frontend/js/components'),
 			'@pages': path.resolve(__dirname, './src/frontend/js/pages'),
@@ -220,6 +225,8 @@ if (!IS_DEV) {
 		devtool: 'source-map',
 		devServer: {
 			hot: true,
+			// host: '127.0.0.0',
+			disableHostCheck: true,
 			port: WEBPACK_PORT,
 			overlay: IS_DEV,
 			open: false,

@@ -38,7 +38,9 @@ module.exports = {
 			parser: '@typescript-eslint/parser',
 			plugins: ['@typescript-eslint'],
 			extends: ['plugin:@typescript-eslint/recommended'],
-			rules: {},
+			rules: {
+				'@typescript-eslint/no-explicit-any': 'off'
+			},
 			settings: {
 				'import/resolver': {
 					node: {

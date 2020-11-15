@@ -8,7 +8,7 @@ function state(): StoreModuleApp {
 	};
 }
 const getters = {
-	isNightTheme(_state: StoreModuleApp) {
+	isNightTheme(_state: StoreModuleApp): boolean {
 		return _state.isNightTheme;
 	}
 };

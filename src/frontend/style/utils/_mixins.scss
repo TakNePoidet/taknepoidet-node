@@ -49,6 +49,7 @@
 		white-space: nowrap; /* Запрещаем перенос строк */
 	}
 }
+
 @mixin iconSprite($img, $size, $index) {
 	background-image: url($img);
 	background-size: auto #{$size}px;

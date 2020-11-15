@@ -37,7 +37,7 @@ export default class TxtRotate {
 
 		this.el.innerHTML = this.txt;
 
-		let delta = 300 - Math.random() * 100;
+		let delta = 200 - Math.random() * 100;
 
 		if (this.isDeleting) {
 			delta /= 2;
@@ -50,7 +50,6 @@ export default class TxtRotate {
 			this.loopNum += 1;
 			delta = 500;
 		}
-		console.log(delta);
 		this.timeout = setTimeout(() => {
 			this.tick();
 		}, delta);

@@ -1,0 +1,106 @@
+// $black: #000000;
+// $white: #ffffff;
+// $tonesBase: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+// $uiKitPalettePreffix: '--ui-palette';
+$uiKitColorPreffix: '--color';
+
+// @function generate-color-tone(
+// 	$color,
+// 	$tones: $tonesBas,
+// 	$base: 900,
+// 	$step: 10
+// ) {
+// 	$colors: ();
+// 	@each $tone in $tones {
+// 		$scale-value: '';
+// 		@if ($tone > $base) {
+// 			$scale-value: darken($color, ($tone - $base) / 100 * ($step * 1));
+// 		} @else if ($tone < $base) {
+// 			$scale-value: lighten($color, ($base - $tone) / 100 * ($step * 1));
+// 		} @else {
+// 			$scale-value: $color;
+// 		}
+// 		$colors: map-set($colors, $tone, $scale-value);
+// 	}
+// 	@return $colors;
+// }
+// $color-palette: (
+// 	black: $black,
+// 	white: $white,
+// 	blue:
+// 		generate-color-tone(
+// 			#2d6dba,
+// 			(100, 200, 300, 400, 500, 600, 700, 800, 900),
+// 			500,
+// 			5
+// 		),
+// 	blue-light:
+// 		generate-color-tone(
+// 			#9eb4c8,
+// 			(100, 200, 300, 400, 500, 600, 700, 800, 900),
+// 			300,
+// 			5
+// 		),
+// 	blue-dark:
+// 		generate-color-tone(
+// 			#1e497c,
+// 			(100, 200, 300, 400, 500, 600, 700, 800, 900),
+// 			600,
+// 			3
+// 		),
+// 	gray:
+// 		generate-color-tone(
+// 			gray,
+// 			(100, 200, 300, 400, 500, 600, 700, 800, 900),
+// 			500,
+// 			11
+// 		),
+// 	light:
+// 		generate-color-tone(
+// 			$white,
+// 			(100, 200, 300, 400, 500, 600, 700, 800, 900),
+// 			100,
+// 			5
+// 		),
+// 	dark:
+// 		generate-color-tone(
+// 			$black,
+// 			(100, 200, 300, 400, 500, 600, 700, 800, 900),
+// 			900,
+// 			5
+// 		)
+// );
+
+@function getColorVar($parts...) {
+	$cssVar: $uiKitColorPreffix;
+	@each $part in $parts {
+		$cssVar: $cssVar + '-' + #{'' + $part};
+	}
+	@return var(#{$cssVar});
+}
+@function getVar($parts...) {
+	$cssVar: '--';
+	@each $part in $parts {
+		$cssVar: $cssVar + #{'' + $part};
+	}
+	@return var(#{$cssVar});
+}
+
+// @function getColorPalette($parts...) {
+// 	$cssVar: $uiKitPalettePreffix;
+// 	@each $part in $parts {
+// 		$cssVar: $cssVar + '-' + #{'' + $part};
+// 	}
+// 	@return var(#{$cssVar});
+// }
+
+@mixin inserRootVariablesDeep($map, $prefix: '-') {
+	@each $key, $value in $map {
+		@if is-map($value) {
+			// $prefix: #{$prefix}-#{$key};
+			@include inserRootVariablesDeep($value, #{$prefix}-#{$key});
+		} @else {
+			#{$prefix}-#{''+$key}: #{$value};
+		}
+	}
+}

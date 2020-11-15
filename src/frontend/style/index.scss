@@ -1,12 +1,23 @@
+@import './inc';
 @import './utils/reset';
-@import './utils/mixins';
-@import './utils/vars';
 
+@import './modules/fonts';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 body {
-	background-color: var(--body-bg);
-	transition: all 0.2s cubic-bezier(0.62, -0.26, 0.74, 0.05);
-	padding-top: 80px;
+	// padding-top: 80px;
 	font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	overflow-x: hidden;
+	background-color: getColorVar('body', 'base');
+}
+html {
+	height: 100%;
+	body {
+		min-height: 100%;
+	}
+}
+html,
+body {
+	background: getColorVar('body', 'base');
 }
 .container {
 	margin: 0 auto;
@@ -14,32 +25,40 @@ body {
 	max-width: var(--container);
 	position: relative;
 	padding: 0px calc(var(--gutter));
+
+	@media screen and (min-width: get-breakpoint-size(xs)) {
+		padding: 0;
+	}
 }
 
 .header {
+	$self: &;
 	width: 100%;
-	position: fixed;
+	// position: fixed;
 	display: block;
-	height: 80px;
+	height: 60px;
 	top: 0;
 	left: 0;
 	z-index: 10;
-	background-color: var(--body-bg);
+	background-color: rgba(getColorVar('body', 'rgb') / 0.98);
+	backdrop-filter: blur(10px);
+	position: sticky;
+	transition: box-shadow 50ms ease-out;
 	.header-container {
 		@extend .container;
-		height: 80px;
+		height: 60px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
 	.header-bar {
 		$bar: '.header-bar';
-		margin-right: 15px;
-		height: 40px;
+		margin-right: var(--gutter);
+		height: 30px;
 		& > button {
 			appearance: none;
-			width: 40px;
-			height: 40px;
+			width: 30px;
+			height: 30px;
 			background-color: transparent;
 			border: none;
 			box-shadow: none;
@@ -51,7 +70,7 @@ body {
 			span {
 				height: 2px;
 				width: 25px;
-				background-color: var(--header-bar);
+				background-color: getColorVar('header', 'bar', 'base');
 				display: block;
 				top: 50%;
 				left: 50%;
@@ -69,7 +88,7 @@ body {
 					left: 0;
 					width: 20px;
 					transition: all 200ms ease;
-					background-color: var(--header-bar);
+					background-color: getColorVar('header', 'bar', 'base');
 				}
 				&::before {
 					top: -6px;
@@ -80,10 +99,10 @@ body {
 			}
 			&:hover {
 				span {
-					background-color: var(--brand-color);
+					background-color: getColorVar('brand', 'base');
 					&::after,
 					&::before {
-						background-color: var(--brand-color);
+						background-color: getColorVar('brand', 'base');
 					}
 				}
 			}
@@ -108,17 +127,86 @@ body {
 		}
 	}
 	.header-logo {
-		color: var(--brand-color);
+		color: getColorVar('brand', 'base');
 		svg {
-			height: 40px;
+			height: 30px;
 		}
+	}
+	.toggle-theme {
+		display: block;
+		cursor: pointer;
+		img {
+			width: 30px;
+		}
+	}
+
+	@media screen and (min-width: get-breakpoints('xss')) {
+		height: 80px;
+		.header-container {
+			height: 80px;
+		}
+		.header-bar {
+			height: 40px;
+			& > button {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		.header-logo {
+			svg {
+				height: 40px;
+			}
+		}
+		.toggle-theme {
+			img {
+				width: 40px;
+			}
+		}
+	}
+	&#{$self}--scroll {
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.05);
 	}
 }
 
-.toggle-theme {
-	display: block;
-	cursor: pointer;
-	img {
-		width: 40px;
+.section {
+	padding: 30px 0;
+	.section-title {
+		font-size: 30px;
+		line-height: 33px;
+		font-weight: 700;
+		padding-bottom: 10px;
+		color: getColorVar('text', 'main', 'base');
+		position: relative;
+	}
+	@media screen and (min-width: get-breakpoint-size('sm')) {
+		.section-title {
+			font-size: 35px;
+			line-height: 38px;
+			padding-bottom: 15px;
+		}
+	}
+	@media screen and (min-width: get-breakpoint-size('md')) {
+		padding: 50px 0;
+	}
+	@media screen and (min-width: get-breakpoint-size('xl')) {
+		padding: 80px 0;
+		.section-title {
+			font-size: 40px;
+			line-height: 45px;
+			padding-bottom: 20px;
+		}
+	}
+	@media screen and (min-width: get-breakpoint-size('xxl')) {
+		padding: 100px 0;
+	}
+}
+
+body.app-theme-change-animation {
+	*,
+	::before,
+	::after,
+	:not(span) {
+		transition-delay: 0s;
+		transition: all 0.2s cubic-bezier(0.62, -0.26, 0.74, 0.05) !important;
 	}
 }

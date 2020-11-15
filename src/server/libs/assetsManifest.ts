@@ -2,12 +2,12 @@ import path from 'path';
 import fs from 'fs';
 import { IS_DEV } from '../config';
 
-interface AsetsManifest {
+interface AssetsManifest {
 	[key: string]: { [key: string]: { js?: string[]; css?: string[] } };
 }
-let cashaAsetsManifest: AsetsManifest;
+let cacheAssetsManifest: AssetsManifest;
 
-function loadAsetsManifest() {
+function loadAssetsManifest() {
 	return JSON.parse(
 		fs
 			.readFileSync(
@@ -16,11 +16,11 @@ function loadAsetsManifest() {
 			.toString()
 	);
 }
-function asetsManifest(): AsetsManifest {
+function assetsManifest(): AssetsManifest {
 	if (!IS_DEV) {
-		cashaAsetsManifest = loadAsetsManifest();
+		cacheAssetsManifest = loadAssetsManifest();
 	}
-	return IS_DEV ? loadAsetsManifest() : cashaAsetsManifest;
+	return IS_DEV ? loadAssetsManifest() : cacheAssetsManifest;
 }
 
-export default asetsManifest;
+export default assetsManifest;

@@ -13,11 +13,17 @@
 		"rootDir": "./",
 		"baseUrl": "./",
 		"paths": {
-			"~/*": ["*"],
-			"~libs/*": ["libs/*"],
-			"~type/*": ["type/*"],
-			"~interface/*": ["interface/*"],
-			"@style/*": ["./style/*"]
+			"@/*": ["/*"],
+			"@js/*": ["./js/*"],
+			"@libs/*": ["./js/libs/*"],
+			"@type/*": ["./js/type"],
+			"@interface/*": ["./js/interface/*"],
+			"@style/*": ["./style/*"],
+			"@fonts/*": ["./fonts/*"],
+			"@images/*": ["./images/*"],
+			"@components/*": ["./js/components/*"],
+			"@pages/*": ["./js/pages/*"],
+			"@layout/*": ["./js/layout/*"]
 		}
 	},
 	"include": ["**/*.ts"],
